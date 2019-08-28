@@ -58,15 +58,32 @@ def lotto():
 
     # 만약 4개가 일치하면 4등
 
+
     # 만약 3개가 일치하면 5등
 
     # return str(sorted(lottos)) + 등수
 
 @app.route('/lotto2')
 def lotto2():
-    winner = [3,5,12,13,33,39]
+
+    import requests
+
+    # 1. requests 통해 요청 보내기
+    url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=873"
+    response = requests.get(url)
+    # print(response) # 200뜨면 됩니다
+    # 콘솔에서 python lotto.py 입력해서 확인
+    # print(response.text) # 내용이 나옴
+    res_dict = response.json() # dictionary타입으로 가져옴
+    # print(res_dict)
+    # print(res_dict['drwtNo1'])
+
+    result = []
+    for i in range(1,7):
+        result.append(res_dict[f'drwtNo{i}'])
+        
     lottos = random.sample(range(1, 46), 6) # 리턴값이 list로 나와서 오류
-    cnt = len(set(winner) & set(lottos))
+    cnt = len(set(result) & set(lottos))
 
     rank = "꽝"
     if cnt == 6:

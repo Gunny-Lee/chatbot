@@ -12,7 +12,7 @@ response = requests.get(url)
 # print(response.text) # 내용이 나옴
 res_dict = response.json() # dictionary타입으로 가져옴
 print(res_dict)
-print(res_dict['data']['opening_price'])
+print(res_dict['data']['opening_price']) # data키 내에 있는 dictionary타입 데이터를 조회
 
 # result = []
 # result.append(res_dict['drwtNo1'])

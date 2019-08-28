@@ -14,7 +14,7 @@ res_dict = response.json() # dictionary타입으로 가져옴
 # print(res_dict)
 # print(res_dict['drwtNo1'])
 
-# result = []
+result = []
 # result.append(res_dict['drwtNo1'])
 # result.append(res_dict['drwtNo2'])
 # result.append(res_dict['drwtNo3'])

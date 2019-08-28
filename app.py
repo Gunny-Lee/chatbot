@@ -15,8 +15,8 @@ def name():
 
 @app.route('/hello/<name>')
 def hello(name):
-   # return 'hello ' + name
-   # return 'hello {}'.format(name)
+# return 'hello ' + name
+# return 'hello {}'.format(name)
     return f'hello {name}'         # 오늘날 많이 사용한다.
 
 @app.route('/square/<int:number>')
